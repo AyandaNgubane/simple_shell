@@ -2,6 +2,7 @@
 
 /**
  * _exit_ - exits the shell
+ * @args: user input
  * Return: 0
  */
 int _exit_(char **args)
