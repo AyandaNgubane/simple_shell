@@ -4,6 +4,7 @@
  * main - entry point
  * @argc: argument count
  * @argv: argument vector
+ * @envp: environmental variables
  * Return: ...
  */
 int main(int argc, char *argv[], char **envp)

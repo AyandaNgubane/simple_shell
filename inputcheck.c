@@ -25,6 +25,7 @@ int total_builtins(void)
  * check_input - checks the input for built in commands
  * @args: arguments from input
  * @name: argv
+ * @envp: environmental variables
  * Return: ....
  */
 int check_input(char **args, char **name, char **envp)

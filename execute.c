@@ -49,13 +49,13 @@ char *pathfinder(char *command, char **name)
 
 	if (path)
 	{
-		dup_path = strdup(path);
-		length = strlen(command);
+		dup_path = _strdup(path);
+		length = _strlen(command);
 		args = strtok(dup_path, ":");
 
 		while (args != NULL)
 		{
-			length_dir = strlen(args);
+			length_dir = _strlen(args);
 			_file = malloc(length + length_dir + 2);
 
 			if (!_file)
@@ -126,4 +126,38 @@ char *_strcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+/**
+ * _strdup - works similar to strdup
+ *
+ * @str: string to be checked
+ * Return: pointer if successful or NULL if it fails
+ */
+char *_strdup(char *str)
+{
+	char *ptr;
+	unsigned int j, length;
+
+	length = 0;
+
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		length++;
+	}
+
+	ptr = malloc(length + 1);
+
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		ptr[j] = str[j];
+	}
+	return (ptr);
 }
