@@ -20,8 +20,14 @@ int execute(char **args, char **name)
 	if (pid == 0)
 	{
 		if (execve(path, args, NULL) == -1)
-			perror(name[0]);
-		exit(EXIT_FAILURE);
+		{
+			write(STDERR_FILENO, name[0], _strlen(name[0]));
+			write(STDERR_FILENO, ": 1: ", _strlen(": 1: "));
+			write(STDERR_FILENO, command, _strlen(command));
+			write(STDERR_FILENO, ": not found\n", _strlen(": not found\n"));
+		}
+		exit(127);
+		/*exit(EXIT_FAILURE);*/
 	}
 	else if (pid < 0)
 		perror(name[0]);

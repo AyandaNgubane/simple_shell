@@ -16,7 +16,11 @@ int main(int argc, char *argv[], char **envp)
 		return (-1);
 
 	do {
-		_print("$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			_print("$ ");
+			fflush(stdout);
+		}
 		input = user_input();
 		args = tokenizer(input, argv);
 		check = check_input(args, argv, envp);
@@ -64,13 +68,7 @@ char *user_input(void)
 
 	if (getline(&input, &buffer, stdin) == -1)
 	{
-		if (feof(stdin))
-			exit(EXIT_SUCCESS);
-		else
-		{
-			perror("userinput");
-			exit(EXIT_FAILURE);
-		}
+		exit(EXIT_SUCCESS);
 	}
 	return (input);
 }
