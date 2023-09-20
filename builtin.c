@@ -8,7 +8,7 @@
 int _exit_(char **args)
 {
 	args[0] = NULL;
-	exit(0);
+	return (0);
 }
 /**
  * _env - prints environment variables
