@@ -11,6 +11,8 @@
 #include <string.h>
 #include <sys/stat.h>
 
+extern char **environ;
+
 void _print(char *str);
 char *user_input(void);
 int _strlen(char *s);

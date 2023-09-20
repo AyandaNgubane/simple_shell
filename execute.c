@@ -11,7 +11,7 @@ int execute(char **args, char **name)
 	pid_t pid;
 	int status;
 	char *command = NULL, *path = NULL;
-	extern char **environ;
+	/*extern char **environ;*/
 
 	command = args[0];
 
@@ -39,11 +39,6 @@ int execute(char **args, char **name)
 	}
 	else if (pid < 0)
 		perror(name[0]);
-	else if (_strcmp(path, command) == 0)
-	{
-		_print("\n");
-		return (1);
-	}
 	else
 	{
 		do {
