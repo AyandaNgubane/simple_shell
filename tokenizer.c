@@ -1,7 +1,5 @@
 #include "shell.h"
 
-#define DELIM " \t\r\n\a"
-
 /**
  * tokenizer - splits user input into arguments
  * @input: user input

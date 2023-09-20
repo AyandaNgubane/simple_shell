@@ -1,6 +1,8 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+#define DELIM " \t\r\n\a"
+
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <unistd.h>
