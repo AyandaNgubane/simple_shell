@@ -9,7 +9,7 @@ int _exit_(char **args)
 {
 	args[0] = NULL;
 	write(STDOUT_FILENO, "exit\n", strlen("exit\n"));
-	return (0);
+	exit(EXIT_SUCCESS);
 }
 /**
  * _env - prints environment variables
