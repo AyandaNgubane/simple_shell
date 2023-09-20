@@ -8,7 +8,7 @@
 int _exit_(char **args)
 {
 	args[0] = NULL;
-	write(STDIN_FILENO, "exit\n", strlen("exit\n"));
+	write(1, "exit\n", strlen("exit\n"));
 	return (0);
 }
 /**
