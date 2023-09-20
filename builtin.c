@@ -9,6 +9,7 @@ int _exit_(char **args)
 {
 	if (args[1] == NULL)
 		return (0);
+	return (2);
 }
 /**
  * _env - prints environment variables
