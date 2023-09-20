@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * main - entry point
+ * main - The entry point
  * @argc: argument count
  * @argv: argument vector
  * @envp: environmental variables
