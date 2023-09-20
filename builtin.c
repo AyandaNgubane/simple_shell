@@ -35,20 +35,19 @@ int _env(char **envp)
 int _cd(char **args)
 {
 	char *path;
-	int rt;
 
 	if (args[1] == NULL)
 	{
 		path = getenv("HOME");
 
 		if (path == NULL)
-			rt = chdir((path = getenv("PWD")) ? path : "/");
+			chdir((path = getenv("PWD")) ? path : "/");
 		else
-			rt = chdir(path);
+			chdir(path);
 	}
 	else
 	{
-		rt = chdir(args[1]);
+		chdir(args[1]);
 	}
 	return (1);
 }
