@@ -15,6 +15,11 @@ int execute(char **args, char **name)
 	command = args[0];
 
 	path = pathfinder(command, name);
+	if (path == NULL)
+	{
+		perror(name[0]);
+		return (-1);
+	}
 
 	pid = fork();
 	if (pid == 0)
