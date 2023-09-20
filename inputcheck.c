@@ -14,7 +14,7 @@ int (*builtin_func[]) (char **) = {
 	&_exit_
 };
 /**
- * total_builtins - gets the number of built in functions
+ * total_builtins - This gets the number of built in functions
  * Return: total
  */
 int total_builtins(void)
