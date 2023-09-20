@@ -7,7 +7,7 @@
  */
 int _exit_(char **args)
 {
-	if (!args[1])
+	if (args[1] == NULL)
 		return (0);
 }
 /**
