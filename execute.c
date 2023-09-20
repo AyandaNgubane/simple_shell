@@ -27,7 +27,6 @@ int execute(char **args, char **name)
 			write(STDERR_FILENO, ": not found\n", _strlen(": not found\n"));
 		}
 		exit(127);
-		/*exit(EXIT_FAILURE);*/
 	}
 	else if (pid < 0)
 		perror(name[0]);
