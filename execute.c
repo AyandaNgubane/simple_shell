@@ -41,7 +41,9 @@ int execute(char **args, char **name)
 		perror(name[0]);
 	else
 	{
+		do {
 			waitpid(pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 	free(path);
 	return (1);

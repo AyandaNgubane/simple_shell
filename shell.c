@@ -24,7 +24,7 @@ int main(int argc, char *argv[], char **envp)
 		input = user_input();
 		args = tokenizer(input, argv);
 		check = check_input(args, argv, envp);
-		free(input);
+		/*free(input);*/
 		free(args);
 	} while (check);
 	return (EXIT_SUCCESS);
