@@ -8,10 +8,7 @@
 int _exit_(char **args)
 {
 	if (args[1] == NULL)
-	{
-		_print("exit\n");
-		return (0);
-	}
+		return (1);
 	return (2);
 }
 /**
