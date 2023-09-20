@@ -68,6 +68,7 @@ char *user_input(void)
 
 	if (getline(&input, &buffer, stdin) == -1)
 	{
+		free(input);
 		exit(EXIT_SUCCESS);
 	}
 	return (input);
