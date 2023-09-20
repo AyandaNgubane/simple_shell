@@ -11,6 +11,7 @@ int execute(char **args, char **name)
 	pid_t pid;
 	int status;
 	char *command = NULL, *path = NULL;
+	extern char **environ;
 
 	command = args[0];
 
@@ -27,7 +28,7 @@ int execute(char **args, char **name)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(path, args, NULL) == -1)
+		if (execve(path, args, environ) == -1)
 		{
 			write(STDERR_FILENO, name[0], _strlen(name[0]));
 			write(STDERR_FILENO, ": 1: ", _strlen(": 1: "));
