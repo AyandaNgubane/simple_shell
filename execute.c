@@ -17,7 +17,9 @@ int execute(char **args, char **name)
 	path = pathfinder(command, name);
 	if (path == NULL)
 	{
-		perror(name[0]);
+		write(STDERR_FILENO, name[0], _strlen(name[0]));
+		write(STDERR_FILENO, ": ", _strlen(": "));
+		perror(command);
 		return (-1);
 	}
 
