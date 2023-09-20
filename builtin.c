@@ -8,7 +8,7 @@
 int _exit_(char **args)
 {
 	if (args[1] == NULL)
-		return (-2);
+		return (0);
 	return (2);
 }
 /**
@@ -34,16 +34,21 @@ int _env(char **envp)
  */
 int _cd(char **args)
 {
+	char *path;
+	int rt;
+
 	if (args[1] == NULL)
 	{
-		_print("Wrong use of command\n");
+		path = getenv("HOME");
+
+		if (path == NULL)
+			rt = chdir((path = getenv("PWD")) ? path : "/");
+		else
+			rt = chdir(path);
 	}
 	else
 	{
-		if (chdir(args[1]) != 0)
-		{
-			perror("shell");
-		}
+		rt = chdir(args[1]);
 	}
 	return (1);
 }
