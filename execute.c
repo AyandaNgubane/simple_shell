@@ -39,6 +39,11 @@ int execute(char **args, char **name)
 	}
 	else if (pid < 0)
 		perror(name[0]);
+	else if (_strcmp(path, command) == 0)
+	{
+		_print("\n");
+		return (1);
+	}
 	else
 	{
 		do {
