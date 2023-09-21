@@ -8,7 +8,7 @@
 int _exit_(char **args)
 {
 	if (args[1] == NULL)
-		exit(2);
+		return(0);
 	return (2);
 }
 /**

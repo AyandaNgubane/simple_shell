@@ -26,8 +26,8 @@ int main(int argc, char *argv[], char **envp)
 		check = check_input(args, argv, envp);
 		free(input);
 		free(args);
-	} while (1);
-	return (check);
+	} while (check);
+	return (EXIT_SUCCESS);
 }
 /**
  * _print - printing function
