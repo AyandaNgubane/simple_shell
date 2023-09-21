@@ -2,8 +2,8 @@
 
 /**
  * main - The entry point
- * @argc: argument count
- * @argv: argument vector
+ * @argc: The argument count
+ * @argv: arg  vector
  * @envp: environmental variables
  * Return: ...
  */
