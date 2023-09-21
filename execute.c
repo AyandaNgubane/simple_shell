@@ -61,7 +61,7 @@ char *pathfinder(char *command, char **name)
 	struct stat buffer;
 
 	path = getenv("PATH");
-	
+
 	if (stat(command, &buffer) == 0)
 		return (command);
 	if (path)
