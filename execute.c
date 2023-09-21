@@ -82,7 +82,6 @@ char *pathfinder(char *command, char **name)
 				return (NULL);
 			}
 			_strcpy(_file, args), _strcat(_file, "/"), _strcat(_file, command);
-			/*_strcat(_file, "\0");*/
 			if (stat(_file, &buffer) == 0)
 			{
 				free(dup_path);
@@ -92,8 +91,6 @@ char *pathfinder(char *command, char **name)
 				free(_file), args = strtok(NULL, ":");
 		}
 		free(dup_path);
-		/*if (stat(command, &buffer) == 0)*/
-			/*return (command);*/
 		return (NULL);
 	}
 	return (NULL);
