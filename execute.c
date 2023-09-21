@@ -11,7 +11,6 @@ int execute(char **args, char **name)
 	pid_t pid;
 	int status;
 	char *command = NULL, *path = NULL;
-	/*extern char **environ;*/
 
 	command = args[0];
 
@@ -45,7 +44,8 @@ int execute(char **args, char **name)
 			waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
-	free(path);
+	if (_strcmp(command, path) != 0)
+		free(path);
 	return (1);
 }
 /**
@@ -56,12 +56,14 @@ int execute(char **args, char **name)
  */
 char *pathfinder(char *command, char **name)
 {
-	char *_file, *path, *dup_path, *args;
+	char *_file, *path, *dup_path = NULL, *args = NULL;
 	int length, length_dir;
 	struct stat buffer;
 
 	path = getenv("PATH");
-
+	
+	if (stat(command, &buffer) == 0)
+		return (command);
 	if (path)
 	{
 		dup_path = _strdup(path);
@@ -80,7 +82,7 @@ char *pathfinder(char *command, char **name)
 				return (NULL);
 			}
 			_strcpy(_file, args), _strcat(_file, "/"), _strcat(_file, command);
-			_strcat(_file, "\0");
+			/*_strcat(_file, "\0");*/
 			if (stat(_file, &buffer) == 0)
 			{
 				free(dup_path);
@@ -90,8 +92,8 @@ char *pathfinder(char *command, char **name)
 				free(_file), args = strtok(NULL, ":");
 		}
 		free(dup_path);
-		if (stat(command, &buffer) == 0)
-			return (command);
+		/*if (stat(command, &buffer) == 0)*/
+			/*return (command);*/
 		return (NULL);
 	}
 	return (NULL);
