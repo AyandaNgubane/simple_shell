@@ -22,11 +22,11 @@ int total_builtins(void)
 	return (sizeof(builtin_cmds) / sizeof(char *));
 }
 /**
- * check_input - checks the input for built in commands
+ * check_input - checks d  input for built in commands
  * @args: arguments from input
  * @name: argv
  * @envp: environmental variables
- * Return: ....
+ * Return: ......
  */
 int check_input(char **args, char **name, char **envp)
 {
