@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _exit_ - exits the shell
+ * _exit_ - exits shell
  * @args: user input
  * Return: 0
  */
@@ -12,9 +12,9 @@ int _exit_(char **args)
 	return (2);
 }
 /**
- * _env - prints environment variables
+ * _env - it prints environment variables
  * @envp: enviromental variables
- * Return: 1
+ * Return: 1 is returnes
  */
 int _env(char **envp)
 {
