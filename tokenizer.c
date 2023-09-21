@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * tokenizer - splits user input into arguments
- * @input: user input
+ * tokenizer - This  splits user input into args
+ * @input: The user input
  * @name: argv
  * Return: arguments
  */
