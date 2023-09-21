@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * execute - opens a new process/program
- * @args: user input
+ * execute - This opens new process/program
+ * @args: the user input
  * @name: argv
  * Return: 1
  */
@@ -49,7 +49,7 @@ int execute(char **args, char **name)
 	return (1);
 }
 /**
- * pathfinder - finds the path of the command
+ * pathfinder - it finds d path of the command
  * @command: user input
  * @name: argv
  * Return: path
